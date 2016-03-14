@@ -1,18 +1,16 @@
-from myFunctions import *
-
+from myFunctions import * #import some useful functions I created for taking an integer input and displaying text in the center of the console
+#Create player name and difficulty variables
 name = ""
 diff = 5
 
-def menu():
-    print("/******************************************\ ")
-    print("|---JustAnotherTextBasedAdventureGam3000---|")
-    print("\******************************************/\n")
+def menu(): #The main menu
+    printCenter("TEXT ADVENTURE GAME")
 
-    print("(m) Move")
+    print("(m) Move") #Show th eplayer options
     print("(o) Options")
     print("(q) Quit")
     print("\nType a number")
-    ans = input("-> ").lower()
+    ans = input("-> ").lower() #Take user prompt, if the user inputs an unrecognised string it will return to the main menu
     if(ans == "m"):
         #move()
         print("Not yet implemented")
@@ -22,16 +20,14 @@ def menu():
         exit()
 
 
-def options():
-    global name, diff
-    print("/*******************\ ")
-    print("|------Options------|")
-    print("\*******************/\n")
+def options(): #Show options to change player settings
+    global name, diff #Allow changing global variables
+    printCenter("OPTIONS")
 
-    print("(n) Change name")
+    print("(n) Change name") #Show prompt
     print("(d) Set difficulty level")
     print("(b) Back")
-    ans = input("-> ").lower()
+    ans = input("-> ").lower() #Take input and make lowercase, less code in IF statement
     if(ans == "n"):
         print("Type a new name:")
         name = input("-> ")
